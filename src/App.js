@@ -32,7 +32,7 @@ function App() {
 
   const cities = ["paris", "new york", "toronto", "tokyo", "seoul"];
 
-  const getCurrentLocationWeather = () => {
+  const getWeatherByCurrLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
       let lat = position.coords.latitude;
       let lon = position.coords.longitude;
@@ -52,9 +52,9 @@ function App() {
 
   useEffect(() => {
     if (city == "") {
-      getCurrentLocationWeather();
+      getWeatherByCurrLocation();
     } else if (city == "currentLocation") {
-      getCurrentLocationWeather();
+      getWeatherByCurrLocation();
     } else {
       getWeatherByCity();
       // console.log("on city change:", city);
